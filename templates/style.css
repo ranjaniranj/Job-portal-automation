@@ -1,0 +1,367 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:700&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+}
+.wrapper{
+	background-size: cover;
+	height: 100vh;
+}
+.navbar{
+	position: fixed;
+	height: 80px;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.4);
+}
+.navbar .logo{
+	width: 140px;
+	height: auto;
+	padding: 20px 100px;
+}
+.navbar ul{
+	float: right;
+	margin-right: 20px;
+}
+.navbar ul li{
+	list-style: none;
+	margin: 0 8px;
+	display: inline-block;
+	line-height: 80px;
+}
+.navbar ul li a{
+	font-size: 20px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	padding: 6px 13px;
+	text-decoration: none;
+	transition: .4s;
+}
+.navbar ul li a.active,
+.navbar ul li a:hover{
+	background: red;
+	border-radius: 2px;
+}
+#home
+{
+	background: url(bg5.jpg) no-repeat;
+    background-size: cover;
+	height: 100vh;
+}
+.center{
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	transform: translate(-50%, -50%);
+	font-family: sans-serif;
+	user-select: none;
+}
+.center h1{
+	color: black;
+	font-size: 70px;
+	width: 900px;
+	font-weight: bold;
+	text-align: center;
+}
+.center h2{
+	color: black;
+	font-size: 40px;
+	font-weight: bold;
+	margin-top: 10px;
+	width: 885px;
+	text-align: center;
+}
+.center .buttons{
+	margin: 35px 280px;
+}
+.buttons button{
+	height: 60px;
+	width: 150px;
+    margin-left: 75px;
+	font-size: 18px;
+	font-weight: 600;
+	color: #ffb3b3;
+	background: red;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #cc0000;
+	border-radius: 25px;
+	transition: .4s;
+}
+.buttons button:hover{
+	background: #cc0000;
+}
+#jobs
+{
+    height: 1500px;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+	background-color: beige;
+	float: left;
+}
+.firstname
+{
+	margin: 35px 5px;
+	text-align: center;
+	color: black;
+	font-size: 30px;
+	font-weight: bold;
+}
+#about
+{
+    height: 1500px;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:beige;
+}
+.hdname
+{
+    height: 80px;
+    width: 100%;
+	position: relative;
+    top:20px;
+    text-align: center;
+    font-family: Georgia;
+    font-size: 40px;
+    color:black;
+}
+.para1
+{
+    height: 160px;
+    width: 80%;
+    text-align: center;
+	position: relative;
+    left:180px;
+}
+.para1 p
+{
+    position: relative;
+    top:30px;
+    font-size: 25px;
+	text-align: center;
+	line-height: 40px;
+}
+#contactpage
+{
+    height: 1500px;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:beige;
+}
+.C{
+    height: 550px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+	position: relative;
+    top:10px;
+}
+.contact
+{
+    height: 50px;
+    width: 1000px;
+    float: left;
+    text-align: center;
+    background-color:grey;
+	position: relative;
+    top:130px;
+}
+.developer
+{
+    height: 50px;
+    width: 1000px;
+    float: left;
+    text-align: center;
+	font-size: 20px;
+	text-align: center;
+	position: relative;
+    top:150px;
+}
+.icon1{
+    height:250px;
+    width:1000px;
+	position: relative;
+    top:320px;
+	right: 100px;
+}
+.icon1 ul
+{
+    position: relative;
+    left:170px;
+    list-style: none;
+}
+.icon2{
+    height:250px;
+    width:1000px;
+	position: relative;
+    top:73px;
+	left: 220px;
+}
+.icon2 ul
+{
+    position: relative;
+    left:170px;
+    list-style: none;
+}
+.icon3{
+    height:250px;
+    width:1000px;
+	position: relative;
+    bottom:174px;
+	left: 490px;
+}
+.icon3 ul
+{
+    position: relative;
+    left:170px;
+    list-style: none;
+}
+.sym
+{
+    height:50px;
+    width:1000px;
+    position: relative;
+    left:210px;
+}
+.google
+{
+    position: relative;
+    left:220px;
+}
+.img0001
+{
+   height:300px;
+   width:100%;
+}
+.img01
+{
+    height:200px;
+    width:200px;
+    float:left;
+}
+.img01 img
+{
+    position:relative;
+    top:30px;
+    left:120px;
+   
+}
+.img02
+{
+    height:430px;
+    width:300px;
+    float:left;
+}
+.img02 img
+{
+    position:relative;
+	top:30px;
+    left:160px;
+}
+.img03
+{
+    height:430px;
+    width:300px;
+    float:left;
+
+}
+.img03 img
+{
+    position:relative;
+    top:30px;
+    left:120px;
+}
+.names
+{
+	position: relative;
+    top:370px;
+	right:210px;
+    font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+
+}
+.name1
+{
+	position: relative;
+	top:1px;
+	right: 50px;
+    font-size: 20px;
+
+}
+.name2
+{
+	position: relative;
+	bottom:39px;
+	left:220px;
+    font-size: 20px;
+
+}
+.name3
+{
+	position: relative;
+	bottom:79px;
+	left:470px;
+    font-size: 20px;
+
+}
+#log {
+	height: 900px;
+	width: 100%;
+	background-image: linear-gradient(beige, grey);
+  }
+  
+  .l1 {
+	height: 450px;
+	width: 1100px;
+	background-color: white;
+	border-radius: 20px;
+	float: left;
+	position: relative;
+	left: 80px;
+	top: 130px;
+  }
+  
+  .l2 {
+	height: 600px;
+	width: 550px;
+	float: left;
+	
+  }
+  
+  .l3 {
+	height: 600px;
+	width: 550px;
+	float: right;
+  }
+  
+  .l3 h3 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: xx-large;
+	color: #34345f;
+	position: relative;
+	top: 100px;
+	left: 150px;
+  }
+  
+  .l3 form {
+	position: relative;
+	top: 130px;
+	left: 100px;
+  }
+  
+  .l3 form button {
+	height: 40px;
+	width: 200px;
+	border: none;
+	border-radius: 20px;
+	background-color: grey;
+	position: relative;
+	left: 35px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: white;
+  }
