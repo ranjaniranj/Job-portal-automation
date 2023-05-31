@@ -9,9 +9,13 @@ This project is a job portal automation tool that aims to streamline the process
 
 # Prerequisites
 Before running the project, make sure you have the following software and tools installed:
+
 UiPath: The automation tool used to scrape data from websites.
+
 Server: Set up a local server such as WAMP to run the website and display job details.
+
 Naukri, Glassdoor, Monster: The job portals from which the data is scraped.
+
 Visual Studio Code: A powerful and versatile code editor for customizing and modifying the project.you can use any editor of your choice
 
 
