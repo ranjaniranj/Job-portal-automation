@@ -1,0 +1,163 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.job="Data Science Analyst" this:Main.loc="Hyderabad" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="job" Type="InArgument(x:String)" />
+    <x:Property Name="loc" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1064,1864</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow demonstrates the procedure for Web Scraping from the Job Portal Website Naukri and to save the details in a database." DisplayName="Sequence - Web Scraping for Naukri" sap:VirtualizedContainerService.HintSize="592,1799.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com" sap:VirtualizedContainerService.HintSize="550.4,1662.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="cf545a90-af90-479f-b598-cdc3257eabdb" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="516.8,1445.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="475.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="cf545a90-af90-479f-b598-cdc3257eabdb" Text="[job]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.naukri.com/" DesignTimeRectangle="406, 444, 409, 52" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aaname='' /&gt;" Guid="d064fcba-9ac0-44d0-92a7-ebe30eb014f6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAZkAAAA0CAYAAABYUEVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAA3XSURBVHhe7Z3vSxtNEMefv13whS/6wgcEBUVEFASFvAg2qG15JEolloYQDBKxoUFC/VEVFUWFeWZ3Z+/27vbMXZKztv1+4KA5L7uzszM7sz8u/YcAAACAgkCQAQAAUBgIMgAAAAoDQQYAAEBhIMgAAAAoDAQZAAAAhYEgAwAAoDAQZAAAABQGggwAAIDCQJABAABQGAgyAAAACgNBBgAAQGEgyAAAACgMBBkAAACFgSADAACgMBBkAAAAFAaCDAAAgMJAkAEAAFAYCDJ5eLihy9tH+fDa3FP3sEX17o18fos80/3tFd08ycffgV/ap4Nx2WnR/tE5/U5qfjs80s31DXsTeC0iQeZs5xNNTFfSr+UGncmzfw4dWuW2zeycy+c0vvNzZRr7d5MqF3LrokEz/N3VQ/nMNN8XpKeHJs39W6a5rwO6h8jav51D0NmjCZZxbL7+m9iJp0/fPCdUYpknNk7kM8jDZe0T9zf3eelY7oCiiQSZ3sdN7oB1mlzbpaWS59o4pkt5Nh/ntLX8VoNUmxbY6CY/9ht8z6m6wm2Y3aXmg9w6/UKT/N2FA/nM1NfUIPuFevJ5ZBxW9WBYPpXPeRFZ+7dzCE45EM6u07vy8RvLFNPsz9Onb52Lutjcs9wAebg/2qPJ6fViky0QwRNkhhjIUjmn8nxBg+/QZA0yHl4xyHzbqNDYdI2+yefcvEaQebO8ZfvLx/1XlYl/os+/S1AEfz0DB5n73jHtN070zObp+oTqjSZVay2qd66ia8X8t/1GnRbUssT0Nm01WsH3Qp65vA7fTylDc0Vt/m6zxznyk/r3F1ot1ah+LX9O5ZEuOyxrjcvm7yfLTgsyd9Q9ULIe07dbc0evhR/+CLP0PEHm4Qe1uP4qy7Hf6FD3IU8magbJ8XJHPvfjnrpHLKtus9T1UpBxZTvgvkld7O+nS6eP4rh1HBkdGhs6ZvnMI9Hvmzb01ZeyBdVPIlMrXncf+0v0aYC0NatNZpV3KDt4Nva12Mi4ohD3q5+edgoZ5Ir4/CmXq3XO/nFtn5X6EvcFrqPJdbS1z97QN+43Xd+LNhdtg/dZt1yxh9RyIzLEcHUwlB8Al4GDjHm2StWDqlmHd66JtTabkMB/d/9mrirV5c9EP+nzGmfp8Wemq7QfMVIJBu+/0JJeR1dXH1lvO7SqMlj17NQ6jUvZatmkK4/4g8wdtTfM0uHc159yzxNAMgWZZ+qqvS6pe5yn6kb2Cq0c3skzfbhu0JSuJ8OAdN129GOvD1ThoJwMMs909nU70X9KtqVG7IDBwLpMqYN1tJ+wN/v9tpl5RL7Dz/Xc9qfJzjKVstufNym4/U6lxfh3+FqsUVsSDkM+eYe2A+rQylRcv2mk+dU2fb7IoscKLTi2r7A+X975EHtWtfWG6qV4fWxHB07brL9woCrNus+pa5NW43pI6wdlz65ubbk17o+47fM4Unf7zOOzo/cD4DJkkGEFs9FWT+V0zpNa4zbOEx0Q05YrnqlVVs/zYF6z2SRnLt06zShjiTxvHFqVPbnRoTOdabl1xHmmpi6b29O1+dszXTZMUJzauZJ78YHRH2AUAwWZi7oOEBNrrTAzeuoZfUzvUktuvUT2JRLRM7e5dGSd45F6tdCBIgPU0a6+P7HSpCBzfTihrWXRW2AHg+qS6Rkdjc3XqGWTBsdOovW4ffxdsnWu56gmZSR1b8q1p8Me6Zu2y3UeuLPYny/InFMl0KHNUDlzDWSoO8/mkHcEdkDdGuu7QqW+o1noVzM7J45fWZ2Fct0fmj6M2sAP6Z91WjoM5z6Bz8/vUlP68smWqcpYrNM3advTaYPmOCB6+4zLVft2Vg9P18e0ooPOB9oKDmDcc98YGcKxgeEkSgcSrivYXwvKrfCz9tSdY/ec9Ab4gszI/QC45Nr4rzrGbZ+NOjMjp6CiSzspTi6ON/nxh9wIuefMQpd/JDesQy83wyz1RdIGlnu6vHCPMLoDYzhIxQOMYqAgI5l0NHNibq+ol+nobI4lEqlr7ms8M342ezpBOxVXtKWyRJY1MWY9tGJ9OIguFSK7CpCRGYDCZrOeIOMOIIKRnwehYJnjkW56J9RNlBuXQZEjyBzu6uw0qUOiGx3sXZvPIe/QdiA+N5UhINmA5llePVMD77SaCahPYgOzvr0+6R+nbcbnK7Taifq8aavbjwZz31m1CBKDZD8EMrun5h5+Urub9MOuliNZbnI5+Z4+r3B9rs4SPluEHwAXT5BRU/lK8vgyX+5RXfPsNu3L5xBxPDd7SOkck6GnHB+VYBUOFr7B4yVs1sEBg7M5M/PxYcvtvRhgFAMFGXGesfk9qvfuBli7NUskWY6smuw1Zcajs2BHf1a///n0Kc4ZtCOvLm2ZRvaoLYQkByfz/XeepMPYW3IgC+FMXQ3Y6vSQ0nfkiGr2IGNkStGh6CzsixzyDm0HMhhytt1vMDN+lWHGk2hPlLguTJvcpW5D5vviL36bCwf7eB8FPN3R5XVPZlnOuGH9sJG0S5PkJGUIfLYQPwAuQ+/JxA3LOl6WIGPKUEbwwhUMFvEBLAPu+ilf45zBzW00qR0sryhE3uDi9kfW0kMGCjJsmO5avDLQd8u7VD7wbTZ70HW4M7p0dN2znoxMYR3c6k8+h+32XVVqmqdz6TLso/RBWJG0t/Q+9tnm0+kxldc+cAKkHN+Vm68M9qeI95f+nHqKz7yjEpadR94h7UDqyrIkY+r2JYAxxAbS3r2ySaBtgyl3+CCTmM0JWveuzanDAbU9mpmtBHsf4eXo9oVybZmpMhTiB8DlDQSZTVpSp0YaKVfnhfX+THCGe3FC9Z0aLSxbY604a80iL8tROmiSOYXE7UoswyQHJJ9xJ56xcBbWPWpS+f02TansXtW56K7v+7nUm6w+PSfRdactp4is8SDzrqROE3n0ri9zkigkmy7jQSbtxbekvaX3ceJZWUcfm9pkJ2/o00A9/Sa31DlMkEldkorPzHLIaxnQDlR7x33leTB1u0uLKYgNpAUuY3thnabcpC1mvm/9xTPjUER1LzMbfl4HYx4jWr0r/esMCd16/NCiy/TJEAsyo/UD4PJLgww11L5Llo1MRbpD5+LaTI/DPY5YucFGdXJGEB+QfMadeMbLI7Xfq6WIfjMUma5nWCJRmLVqd/PUQfYE4gFgqDfH++nS9rt3zV/aFrG39D6O22azpL7r2+sxZQwaZEw9KToM9hCjOswir5+sdiBLV1nfk9J97e4dxbH3jfz+o/F2aSj08TSfz3xf/MVvczJLtLbEutaDv+dZY+cjCjKig9H6AXD5tUHGbqzxs4nN/COeJq/sUbVrp6HpDu3l9pjKKzyVrcWzNDHm4KdPkuX2/lNtSxr4IEGmW6vSzOJeIjM2SxFlzn7khhcjW+ZTK90avfPI7WaFYTvtpug27ScG6g6tLm/Taq1n9g6G0OWZHHeNH+644YHQLB0NFmS0nj0zjhtOXHRmOWCQSdehPTzhJkXZ5R3ODoz8/mDgQfxKDXrRAwm2DXaWYwO9J1jfysC50goSnDSfz3xf/MVnc7bfAluXZ5O2/8P05ciCTBF+AFw8QaZCCzu+KaO6wmljmmFZx4s6ebhhNrPB01Ln5Tc7oE8s12i/c06X1+fUru0aY5yuOj/3ke7QfuzAytPYmlpK4al2r0MVeXcgNF5fuXdsnEbeBeec/yBBJjgeye2rq+m+al9jz2wC9zu6mmOJxGDl5vbw9L99qtp8TCX1kyrzm1qOSDtPTbY4Nv2JSty3Ske9TpOWtBO7x1eH0eUPqkiAG5/f1qcU1RKDGuhWyqrvBwsy5vShWebQ7bzuUX1D/fbeugleGe0v0V/8rDlA4ZR9ekJVeQckemIru7xD2UGe96SEhF9xG/aVftS9kvOzPxembG0DBz2W64q6BzXzCkFsRpfm85nvi79Msi2OzVZp60jV16PWTlUH9uiMt2dOtzlyGdvk/tV7cKMKMszI/QC4eIKMUmLaFXZWmmFZx4s6OaNfrDLOGz2980xnDQ4qdn1arvH5XdqPvDSW7tCpcJ1lPaC5ZVdobkcyE01auU7GJAcBBgoytn0RGVT79oJ3DdLQWWfq/kAaP2m/FOvHxTp1ZRkw0c6LtnbcyPNTm7TUiJ2wG0qX4QauOqX4bnmP9k89a+t5Bm39PtMHWQ+XiweJrV4++0v2l4LL/uhu0qurQjMfv8dm3HnkHdwOzGwnwx5LBH99k6V2MtvWNhB9Tr0LE/W/dJ/PfD/wlztqvld/C+vTeojPJC6atBB7aXPyfYf7JqbbYYOMYqR+AFwiQeZVeLihG+/RP3MEVWUs/r8Pgfo5d5V1XA9ydHRUqJ8Yz9M+eSkwPlhmRR/35Ppug5z1ZayO+j0/Ql0mB+IBsO3MKk+q/fm4lz4b5TsQee1A9p8SgTArTn19FPQk/lfYf30QH+ADm3upvgLHBR+/wA/+dF4/yIBsyPn9gX/a/62gMr+1Pc9pPVl6yD1T+9sw6/1DbUy/FV6YcYA/FwQZUChPnT2z3j79gVZ3WlQ/6lC90QiWZ/wvwYE/EgSZvxIEGVA4T6ctWgr2Q+Sa/USrDfzvjn8Vnv/kD/z5IMiAV0Str2MNG4C/CQQZAAAAhYEgAwAAoDAQZAAAABQGggwAAIDCQJABAABQGAgyAAAACgNBBgAAQGEgyAAAACgMBBkAAACFgSADAACgMBBkAAAAFAaCDAAAgMJAkAEAAFAYCDIAAAAKguh/mpK+w7kDPYIAAAAASUVORK5CYII=" InformativeScreenshot="160eb9c295a5aa0e7540a0c9f60218af.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'INPUT'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="475.2,218.4" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="cf545a90-af90-479f-b598-cdc3257eabdb" Text="[loc]" Version="V1">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.naukri.com/" DesignTimeRectangle="1131, 444, 274, 52" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;input' idx='2' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl type='text' aaname='' tag='INPUT' /&gt;" Guid="4142f327-2dc2-4b87-9bc4-ab9746cf5bce" ImageBase64="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" InformativeScreenshot="5a3a5061558fe391faf2d3a228bc21d6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Search'" sap:VirtualizedContainerService.HintSize="475.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="cf545a90-af90-479f-b598-cdc3257eabdb" Version="V1">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.naukri.com/" DesignTimeRectangle="1418, 440, 150, 60" ElementType="Text" FriendlyName="'Search'" FullSelectorArgument="&lt;webctrl aaname='Search' parentid='root' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Search' parentid='root' tag='DIV' type='' check:text='Search' /&gt;" Guid="a7fdc804-d223-4be9-8d8c-9ee112a4cce6" ImageBase64="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" InformativeScreenshot="dc333754de719250b2430a237d7b3d72.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com' /&gt;" SearchSteps="FuzzySelector, Image" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="475.2,441.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'DataAnaly Page'" sap:VirtualizedContainerService.HintSize="433.6,347.2" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8dbc3c41baf5bb4a9d879ad65f970f6b" Selector="&lt;html app='chrome.exe' title='*' /&gt;">
+                <ui:BrowserScope.Body>
+                  <ActivityAction x:TypeArguments="x:Object">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,200" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:ExtractData SimulateClick="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="1000" DisplayName="Extract Structured Data 'DIV  root'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Job Position Name' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Company Name' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Pay' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Experience' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='ul' idx='1' /&gt;&lt;webctrl tag='li' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Rating' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='URL' attr='href'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='section' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='article' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100" NextLinkSelector="&lt;webctrl aaname='Next' parentid='root' tag='A' /&gt;" SendWindowMessages="True">
+                        <ui:ExtractData.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="072da32f-868c-4527-8bb5-b465c1596ebb" InformativeScreenshot="66c72cf53b89f5c6828c86c8c0bd84ee" Selector="&lt;webctrl tag='DIV' /&gt;" WaitForReady="COMPLETE">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                          </ui:Target>
+                        </ui:ExtractData.Target>
+                      </ui:ExtractData>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:BrowserScope.Body>
+              </ui:BrowserScope>
+            </Sequence>
+            <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[ExtractDataTable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="Naukri.csv" sap:VirtualizedContainerService.HintSize="475.2,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1038" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="3da35fcf7be6d69f9a27e4532f49c600.png" Selector="&lt;html app='chrome.exe' title='Jobs - Recruitment - Job Search - Employment - Job Vacancies - Naukri.com'/&gt;" Url="https://www.naukri.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
