@@ -1,0 +1,234 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1064,6953.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="32">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="This workflow demonstrates the procedure for Job Portal Search Automation from the websites - Naukri, Glassdoor and Monster." DisplayName="Sequence - Job Portal Search Automation" sap:VirtualizedContainerService.HintSize="636,6888.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="job" />
+      <Variable x:TypeArguments="x:String" Name="loc" />
+      <Variable x:TypeArguments="sd:DataTable" Name="naukri" />
+      <Variable x:TypeArguments="sd:DataTable" Name="mons" />
+      <Variable x:TypeArguments="sd:DataTable" Name="output" />
+      <Variable x:TypeArguments="sd:DataTable" Name="glassdoor" />
+      <Variable x:TypeArguments="sd:DataColumn" Name="exp" />
+      <Variable x:TypeArguments="sd:DataTable" Name="finaldt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="naukri2" />
+      <Variable x:TypeArguments="sd:DataTable" Name="gd2" />
+      <Variable x:TypeArguments="sd:DataTable" Name="mon2" />
+      <Variable x:TypeArguments="x:Int32" Name="index" />
+      <Variable x:TypeArguments="x:Int32" Name="index2" />
+      <Variable x:TypeArguments="x:Int32" Name="index3" />
+      <Variable x:TypeArguments="sd:DataTable" Name="mon3" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="594.4,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Enter the job position to search for: " Title="Job Position">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[job]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="594.4,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Enter the desired job location: " Title="Location">
+      <ui:InputDialog.Result>
+        <OutArgument x:TypeArguments="x:String">[loc]</OutArgument>
+      </ui:InputDialog.Result>
+    </ui:InputDialog>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="594.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="C:\Users\Karthavya\OneDrive\Documents\UiPath\Naukri-RPA Project\Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="loc">[loc]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="594.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="C:\Users\Karthavya\OneDrive\Documents\UiPath\Glassdoor-RPA Project\Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="loc">[loc]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="594.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="C:\Users\Karthavya\OneDrive\Documents\UiPath\Monster\Main.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="job">[job]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="loc">[loc]</InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[naukri]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Naukri.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[glassdoor]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Glassdoor.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_3" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[gd2]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Glassdoor.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_9" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[mons]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Monster.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_5" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[mon2]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Monster.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_10" />
+    <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[mon3]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Monster.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_11" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[naukri]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[glassdoor]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[mons]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" />
+    <ui:ClearDataTable DataTable="[gd2]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_1" />
+    <ui:ClearDataTable DataTable="[mon2]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_2" />
+    <ui:ClearDataTable DataTable="[mon3]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index]" DataTable="[glassdoor]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="594.4,988.8" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,868" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="r" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[naukri]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="519.2,295.2" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="Job Position Name" LookupValue="[CurrentRow(&quot;Position&quot;).ToString]" RowIndex="[r]" />
+            <If Condition="[r&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="519.2,440" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[gd2]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index3]" DataTable="[mons]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="594.4,988.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,868" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="r" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[naukri]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="519.2,295.2" sap2010:WorkflowViewState.IdRef="LookupDataTable_2" LookupColumnName="Job Position Name" LookupValue="[CurrentRow(&quot;Position&quot;).ToString]" RowIndex="[r]" />
+            <If Condition="[r&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="519.2,440" sap2010:WorkflowViewState.IdRef="If_2">
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[mon2]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[index2]" DataTable="[mon2]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="594.4,988.8" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,868" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="r" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[glassdoor]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="519.2,295.2" sap2010:WorkflowViewState.IdRef="LookupDataTable_3" LookupColumnName="Position" LookupValue="[CurrentRow(&quot;Position&quot;).ToString]" RowIndex="[r]" />
+            <If Condition="[r&lt;&gt;-1]" sap:VirtualizedContainerService.HintSize="519.2,440" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="375.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="sd:DataTable" Name="mons" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[CurrentRow.ItemArray]" DataTable="[mon3]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.6,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[gd2]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" />
+    <ui:RemoveDuplicateRows OutputDataTable="{x:Null}" DataTable="[mon3]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="594.4,80.8" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_5" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="True" DataTable="[naukri]" Delimitator="Comma" DisplayName="Write CSV" FilePath="DataScraping Project Final.csv" sap:VirtualizedContainerService.HintSize="594.4,155.2" sap2010:WorkflowViewState.IdRef="WriteCsvFile_4" />
+    <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[gd2]" Delimitator="Comma" DisplayName="Append to CSV" FilePath="DataScraping Project Final.csv" sap:VirtualizedContainerService.HintSize="594.4,134.4" sap2010:WorkflowViewState.IdRef="AppendCsvFile_2" />
+    <ui:AppendCsvFile Encoding="{x:Null}" DataTable="[mon3]" Delimitator="Comma" DisplayName="Append to CSV" FilePath="DataScraping Project Final.csv" sap:VirtualizedContainerService.HintSize="594.4,134.4" sap2010:WorkflowViewState.IdRef="AppendCsvFile_3" />
+  </Sequence>
+</Activity>
