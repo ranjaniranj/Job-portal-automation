@@ -22,11 +22,11 @@ Visual Studio Code: A powerful and versatile code editor for customizing and mod
 # Getting Started
 To access this project, follow the steps below:
 01. Download the templates folder from the repository.
-02. Run the UiPath path files provided in the [Job Portal Automation - Uipath](Job Portal Automation - UiPath) folder to scrape data from Naukri, Glassdoor, and Monster.
-03. The scraped data from these websites will be stored in a file.Check the file where the scraped data is stored and ensure it is accessible by the MAIN workflow.
-04. Read the data from the MAIN workflow, where all the data is compared and processed to remove duplicate rows.
-05. The resulting data will be downloaded as a csv file 
-06. Attach it to the templates folder.
+02. Run the UiPath path files provided in the Job Portal Automation - Uipath folder, which has .xaml and .json project files to scrape data from Naukri, Glassdoor, and Monster.
+03. After ensuring the resultant data scraped from the three workflows, Run the 'Job Portal Automation - Main' project by replacing the files and workflows required with the correct directory.
+04. Read the data from the MAIN workflow, where the data from three different Job Sites is compared and processed to remove duplicate rows.
+05. The resulting data will be saved to a given directory and file name. The final list of non-repititive Job Postings from three sites can then be downloaded for your convenience.
+06. Attach the final list to the templates folder.
 07. Run the project with a server such as WAMP or any other server of your choice.
 08. Access the website through your preferred web browser.
 09. The website will display the top 100 job results for the specified job requirement, excluding any duplicated jobs from the three websites.
